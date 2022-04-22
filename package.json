@@ -1,0 +1,46 @@
+{
+  "name": "sweet-tail",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/button": "^1.5.9",
+    "@chakra-ui/editable": "^1.4.1",
+    "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/input": "^1.4.5",
+    "@chakra-ui/react": "^1.8.7",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@googlemaps/react-wrapper": "^1.1.31",
+    "@mui/material": "^5.6.0",
+    "@react-google-maps/api": "^2.8.1",
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "firebase": "^9.6.10",
+    "firebase-admin": "^10.0.2",
+    "framer-motion": "^6.2.8",
+    "google-map-react": "^2.1.10",
+    "next": "12.1.0",
+    "react": "^17.0.2",
+    "react-dom": "17.0.2",
+    "react-firebaseui": "^6.0.0",
+    "react-frame-component": "^5.2.1",
+    "react-icon": "^1.0.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.3.0",
+    "react-stars": "^2.2.5",
+    "styled-components": "^5.3.5",
+    "swr": "^1.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.43",
+    "eslint": "8.11.0",
+    "eslint-config-next": "12.1.0"
+  }
+}
