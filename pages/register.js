@@ -135,7 +135,7 @@ const Register = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser, "currentUser");
-      // setUser(currentUser);
+      setUser(currentUser);
       // router.push("/");
     });
   }, []);
