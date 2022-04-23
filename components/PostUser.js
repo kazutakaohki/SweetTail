@@ -45,7 +45,7 @@ const PostUser = ({
   // const [title, setTitle] = useState(username);
 
   // ポイント！(db,'posts')ここがコレクション（箱）にアクセスしている記述になります！間違えないように！
-  const usernameRef = collection(db, "users");
+  // const usernameRef = collection(db, "users");
 
   // 編集の処理
   // const editTask = async () => {
