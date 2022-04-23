@@ -5,7 +5,7 @@ import PageTitle from "../components/Pagetitle";
 import Stars from "../components/Stars";
 // React
 import React, { useState } from "react";
-import ReactStars from "react-stars";
+import { useRouter } from "next/router";
 
 // chakra UI
 import {
@@ -127,7 +127,7 @@ const Recommend = () => {
     setSpotcommentValue("");
   };
 
-  // ここまで追加
+  const router = useRouter(); //useRouterフックを定義
 
   return (
     <div>
@@ -278,14 +278,13 @@ const Recommend = () => {
               キャンセル
             </Button>
             <Button
-              as="a"
-              href="/thanks"
               bg="#EF9996"
               color="white"
               fontSize="12px"
               variant="solid"
               type="submit"
               disabled={!spotnameValue}
+              onClick={() => router.push("/thanks")}
             >
               登録する
             </Button>

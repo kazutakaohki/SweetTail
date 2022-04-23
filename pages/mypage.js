@@ -223,7 +223,7 @@ const Mypage = () => {
 
             <TitleBar title="　行きたいスポットリスト" />
             <div>
-              <Box maxHeight="400px">
+              <Box>
                 <SpotList />
               </Box>
             </div>

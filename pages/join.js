@@ -82,7 +82,6 @@ const Join = () => {
       alert("正しく入力してください");
     }
 
-    // setUserNameValue("");
     // setDognameValue("");
     // setDogkindsValue("");
     // setDogageValue("");
@@ -92,14 +91,13 @@ const Join = () => {
 
   /* ↓state変数「user」を定義 */
   const [user, setUser] = useState("");
-  // const router = useRouter();
+  const router = useRouter();
 
   /* ↓ログインしているかどうかを判定する */
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-    // router.push("/register");
   });
 
   return (
@@ -132,15 +130,15 @@ const Join = () => {
                 textAlign="center"
                 alignItems="center"
               >
-                ユーザー登録がお済みの方はこちら
+                メールアドレスが登録されました
               </Text>
 
-              <Link href="/" color="red" fontWeight="bold">
-                Home
+              <Link href="/register" color="red" fontWeight="bold">
+                続けてユーザー情報を登録して下さい
               </Link>
-              <Link href="/mypage" color="red" fontWeight="bold">
+              {/* <Link href="/mypage" color="red" fontWeight="bold">
                 マイページ
-              </Link>
+              </Link> */}
             </Stack>
           </Stack>
         ) : (

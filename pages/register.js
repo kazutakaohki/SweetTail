@@ -128,7 +128,6 @@ const Register = () => {
     setDogageValue("");
     setDoggenderValue("");
     setDogweightValue("");
-    router.push("/thanks");
   };
 
   // ↓ログイン判定
@@ -319,8 +318,8 @@ const Register = () => {
                   bg: "red.500",
                 }}
                 type="submit"
-                // onClick={"/"}
-                // disabled={!spotnameValue}
+                disabled={!usernameValue}
+                onClick={() => router.push("/thanks")}
               >
                 登録
               </Button>
