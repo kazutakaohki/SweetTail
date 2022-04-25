@@ -221,7 +221,7 @@ const Register = () => {
                 placeholder="メールアドレス"
                 _placeholder={{ color: "gray.500" }}
                 type="email"
-                value={user?.email}
+                value={user.email}
                 readOnly
                 onChange={(e) => setEmailValue(e.target.value)}
               />
