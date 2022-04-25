@@ -33,8 +33,9 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 // 👆ここまでインポート
 
 const Join = () => {
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
+  const [user, setUser] = useState("");
+  // const [emailvalue, setEmailValue] = useState("");
+  // const [passwordvalue, setPasswordValue] = useState("");
 
   // const [dognameValue, setDognameValue] = useState();
   // const [dogkindsValue, setDogkindsValue] = useState();
@@ -47,23 +48,19 @@ const Join = () => {
     e.preventDefault();
 
     try {
-      await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
-      )
+      await createUserWithEmailAndPassword(auth, email, password)
         // ↓firestoreにドキュメントを追加する処理
 
         .then(() => {
           addDoc(collection(db, "users"), {
-            email: registerEmail,
+            email: user.email,
 
-            image: url,
-            dogname: dognameValue,
-            dogkinds: dogkindsValue,
-            dogage: dogageValue,
-            doggender: doggenderValue,
-            dogweight: dogweightValue,
+            // image: url,
+            // dogname: dognameValue,
+            // dogkinds: dogkindsValue,
+            // dogage: dogageValue,
+            // doggender: doggenderValue,
+            // dogweight: dogweightValue,
 
             timestamp: serverTimestamp(),
           })
@@ -90,7 +87,7 @@ const Join = () => {
   };
 
   /* ↓state変数「user」を定義 */
-  const [user, setUser] = useState("");
+
   const router = useRouter();
 
   /* ↓ログインしているかどうかを判定する */
@@ -209,8 +206,8 @@ const Join = () => {
                     placeholder="メールアドレスを入力して下さい"
                     name="email"
                     type="email"
-                    value={registerEmail}
-                    onChange={(e) => setRegisterEmail(e.target.value)}
+                    value={user?.email}
+                    onChange={(e) => setEmailValue(e.target.value)}
                   />
                 </InputGroup>
                 <InputGroup>
@@ -223,8 +220,8 @@ const Join = () => {
                     placeholder="パスワードを設定して下さい"
                     name="password"
                     type="password"
-                    value={registerPassword}
-                    onChange={(e) => setRegisterPassword(e.target.value)}
+                    value={user?.password}
+                    onChange={(e) => setPasswordValue(e.target.value)}
                   />
                 </InputGroup>
 
