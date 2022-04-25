@@ -32,7 +32,7 @@ const Register = () => {
   // useStateを準備　画像を保持する、入力された文字を保持する
   const [user, setUser] = useState("");
   const [usernameValue, setUserNameValue] = useState();
-  const [emailvalue, setEmailValue] = useState();
+  // const [emailvalue, setEmailValue] = useState();
   const [dognameValue, setDognameValue] = useState();
   const [dogkindsValue, setDogkindsValue] = useState();
   const [dogageValue, setDogageValue] = useState();
@@ -221,7 +221,7 @@ const Register = () => {
                 placeholder="メールアドレス"
                 _placeholder={{ color: "gray.500" }}
                 type="email"
-                value={user.email}
+                value={user?.email}
                 readOnly
                 onChange={(e) => setEmailValue(e.target.value)}
               />

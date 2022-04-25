@@ -34,14 +34,15 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const Join = () => {
   const [user, setUser] = useState("");
-  // const [emailvalue, setEmailValue] = useState("");
-  // const [passwordvalue, setPasswordValue] = useState("");
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  // const [usernameValue, setUserNameValue] = useState("");
   // const [dognameValue, setDognameValue] = useState();
   // const [dogkindsValue, setDogkindsValue] = useState();
   // const [dogageValue, setDogageValue] = useState();
   // const [doggenderValue, setDoggenderValue] = useState();
   // const [dogweightValue, setDogweightValue] = useState();
+  // const [image, setImage] = useState(null);
 
   /* ↓関数「handleSubmit」を定義 */
   const handleSubmit = async (e) => {
@@ -53,8 +54,8 @@ const Join = () => {
 
         .then(() => {
           addDoc(collection(db, "users"), {
-            email: user.email,
-
+            email: email,
+            // username: usernameValue,
             // image: url,
             // dogname: dognameValue,
             // dogkinds: dogkindsValue,
@@ -69,16 +70,13 @@ const Join = () => {
               console.log("Firestore登録エラー: ", error);
             });
         });
-      //we need to catch the whole sign up process if it fails too.
-      // .catch((error) => {
-      //   console.log("Something went wrong with sign up: ", error);
-      // });
 
       // ↑firestoreにドキュメントを追加する処理
     } catch (error) {
       alert("正しく入力してください");
     }
 
+    // setUserNameValue("");
     // setDognameValue("");
     // setDogkindsValue("");
     // setDogageValue("");
@@ -206,8 +204,8 @@ const Join = () => {
                     placeholder="メールアドレスを入力して下さい"
                     name="email"
                     type="email"
-                    value={user?.email}
-                    onChange={(e) => setEmailValue(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </InputGroup>
                 <InputGroup>
@@ -220,8 +218,8 @@ const Join = () => {
                     placeholder="パスワードを設定して下さい"
                     name="password"
                     type="password"
-                    value={user?.password}
-                    onChange={(e) => setPasswordValue(e.target.value)}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </InputGroup>
 
@@ -237,6 +235,7 @@ const Join = () => {
                   color="white"
                   textAlign="center"
                   ml="20px"
+                  onClick={() => router.push("/register")}
                 >
                   登録する
                 </Button>
