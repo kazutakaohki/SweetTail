@@ -149,138 +149,139 @@ const MapCafe = () => {
   }
 
   return (
-    <HStack>
-      <Flex
-        position="relative"
-        flexDirection="column"
-        alignItems="center"
-        h="100vh"
-        w="390px"
-      >
-        <Box position="absolute" left={0} top={0} h="100%" w="100%">
-          {/* Google Map Box */}
-          <GoogleMap
-            center={center}
-            zoom={10}
-            mapContainerStyle={{ width: "100%", height: "100%" }}
-            options={{
-              zoomControl: true,
-              streetViewControl: true,
-              mapTypeControl: false,
-              fullscreenControl: false,
-            }}
-            onLoad={handleOnLoad}
-            onClick={() => setActiveMarker(null)}
-          >
-            {/* テスト追加エリア👇 */}
-
-            {markers.map(
-              ({
-                id,
-                name,
-                spotcategory,
-                spotinout,
-                spotparking,
-                dog,
-                position,
-                gbp,
-              }) => (
-                <Marker
-                  key={id}
-                  position={position}
-                  onClick={() => handleActiveMarker(id)}
-                >
-                  {activeMarker === id ? (
-                    <InfoWindow onCloseClick={() => setActiveMarker(null)}>
-                      <Box>
-                        <Heading
-                          as="a"
-                          href={gbp}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          mt="5px"
-                          ml="5px"
-                          mb="5px"
-                          fontSize="12px"
-                          // fontWeight="bold"
-                          textAlign="left"
-                        >
-                          {name}
-                        </Heading>
-                        <Divider />
-                        <Stack direction="row" mt="5px" maxW="300px">
-                          <Badge colorScheme="pink">{dog}</Badge>
-                          <Badge colorScheme="blue">{spotcategory}</Badge>
-                          <Badge colorScheme="purple">{spotinout}</Badge>
-                          <Badge colorScheme="green">{spotparking}</Badge>
-                        </Stack>
-                      </Box>
-                    </InfoWindow>
-                  ) : null}
-                </Marker>
-              )
-            )}
-
-            {directionsResponse && (
-              <DirectionsRenderer directions={directionsResponse} />
-            )}
-
-            {/* テスト追加エリア👆 */}
-          </GoogleMap>
-        </Box>
-
-        <Box
-          w="300px"
-          p={2}
-          borderRadius="lg"
-          m={2}
-          bgColor="white"
-          shadow="base"
-          zIndex="1"
+    <>
+      <HStack>
+        <Flex
+          position="relative"
+          flexDirection="column"
+          alignItems="center"
+          h="100vh"
+          w="390px"
         >
-          <Box w="280px">
-            <Autocomplete>
-              <Input
-                h="30px"
-                fontSize="14px"
-                type="text"
-                placeholder="出発地"
-                ref={originRef}
-              />
-            </Autocomplete>
-          </Box>
-          <Box w="280px" mt="5px">
-            <Autocomplete>
-              <Input
-                h="30px"
-                fontSize="14px"
-                type="text"
-                placeholder="目的地"
-                ref={destiantionRef}
-              />
-            </Autocomplete>
+          <Box position="absolute" left={0} top={0} h="100%" w="100%">
+            {/* Google Map Box */}
+            <GoogleMap
+              center={center}
+              zoom={10}
+              mapContainerStyle={{ width: "100%", height: "100%" }}
+              options={{
+                zoomControl: true,
+                streetViewControl: true,
+                mapTypeControl: false,
+                fullscreenControl: false,
+              }}
+              onLoad={handleOnLoad}
+              onClick={() => setActiveMarker(null)}
+            >
+              {/* テスト追加エリア👇 */}
+
+              {markers.map(
+                ({
+                  id,
+                  name,
+                  spotcategory,
+                  spotinout,
+                  spotparking,
+                  dog,
+                  position,
+                  gbp,
+                }) => (
+                  <Marker
+                    key={id}
+                    position={position}
+                    onClick={() => handleActiveMarker(id)}
+                  >
+                    {activeMarker === id ? (
+                      <InfoWindow onCloseClick={() => setActiveMarker(null)}>
+                        <Box>
+                          <Heading
+                            as="a"
+                            href={gbp}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            mt="5px"
+                            ml="5px"
+                            mb="5px"
+                            fontSize="12px"
+                            // fontWeight="bold"
+                            textAlign="left"
+                          >
+                            {name}
+                          </Heading>
+                          <Divider />
+                          <Stack direction="row" mt="5px" maxW="300px">
+                            <Badge colorScheme="pink">{dog}</Badge>
+                            <Badge colorScheme="blue">{spotcategory}</Badge>
+                            <Badge colorScheme="purple">{spotinout}</Badge>
+                            <Badge colorScheme="green">{spotparking}</Badge>
+                          </Stack>
+                        </Box>
+                      </InfoWindow>
+                    ) : null}
+                  </Marker>
+                )
+              )}
+
+              {directionsResponse && (
+                <DirectionsRenderer directions={directionsResponse} />
+              )}
+
+              {/* テスト追加エリア👆 */}
+            </GoogleMap>
           </Box>
 
-          <Box justifyContent="flex-start">
-            <ButtonGroup mt="5px">
-              <Button
-                h="30px"
-                fontSize="14px"
-                alignItems="center"
-                colorScheme="pink"
-                type="submit"
-                onClick={calculateRoute}
-              >
-                検索
-              </Button>
-              <IconButton
-                h="30px"
-                w="30px"
-                aria-label="center back"
-                icon={<FaTimes />}
-                onClick={clearRoute}
-              />
-              {/* <IconButton
+          <Box
+            w="300px"
+            p={2}
+            borderRadius="lg"
+            m={2}
+            bgColor="white"
+            shadow="base"
+            zIndex="1"
+          >
+            <Box w="280px">
+              <Autocomplete>
+                <Input
+                  h="30px"
+                  fontSize="14px"
+                  type="text"
+                  placeholder="出発地"
+                  ref={originRef}
+                />
+              </Autocomplete>
+            </Box>
+            <Box w="280px" mt="5px">
+              <Autocomplete>
+                <Input
+                  h="30px"
+                  fontSize="14px"
+                  type="text"
+                  placeholder="目的地"
+                  ref={destiantionRef}
+                />
+              </Autocomplete>
+            </Box>
+
+            <Box justifyContent="flex-start">
+              <ButtonGroup mt="5px">
+                <Button
+                  h="30px"
+                  fontSize="14px"
+                  alignItems="center"
+                  colorScheme="pink"
+                  type="submit"
+                  onClick={calculateRoute}
+                >
+                  検索
+                </Button>
+                <IconButton
+                  h="30px"
+                  w="30px"
+                  aria-label="center back"
+                  icon={<FaTimes />}
+                  onClick={clearRoute}
+                />
+                {/* <IconButton
               h="30px"
               w="30px"
               aria-label="center back"
@@ -291,19 +292,20 @@ const MapCafe = () => {
                 map.setZoom(15);
               }}
             /> */}
-            </ButtonGroup>
-            <HStack spacing={1} mt={1}>
-              <Text fontSize="12px" w="140px">
-                距離: {distance}{" "}
-              </Text>
-              <Text fontSize="12px" w="140px">
-                時間: {duration}{" "}
-              </Text>
-            </HStack>
+              </ButtonGroup>
+              <HStack spacing={1} mt={1}>
+                <Text fontSize="12px" w="140px">
+                  距離: {distance}{" "}
+                </Text>
+                <Text fontSize="12px" w="140px">
+                  時間: {duration}{" "}
+                </Text>
+              </HStack>
+            </Box>
           </Box>
-        </Box>
-      </Flex>
-    </HStack>
+        </Flex>
+      </HStack>
+    </>
   );
 };
 

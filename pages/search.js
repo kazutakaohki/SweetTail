@@ -20,21 +20,16 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  Box,
 } from "@chakra-ui/react";
 
 // 👆ここまでインポート
 
 const Search = () => {
   return (
-    <div>
+    <Box>
       <Header />
-      {/* <InputGroup w="350px" mt="10px" ml="20px">
-        <Input
-          type="text"
-          placeholder="キーワードでお出かけスポットを検索する"
-          textAlign="center"
-        />
-      </InputGroup> */}
+
       <Flex
         spacing={"15px"}
         w={"350px"}
@@ -48,82 +43,84 @@ const Search = () => {
       >
         <SearchIconBox />
       </Flex>
-      {/* <Divider mt="15px" /> */}
+      <Box>
+        <Tabs
+          isLazy
+          variant="soft-rounded"
+          colorScheme="pink"
+          w="390px"
+          mt="15px"
+          align="center"
+        >
+          <TabList h="20px" mb="5px">
+            <Tab w="70px" fontSize="12px">
+              ALL
+            </Tab>
+            <Tab w="70px" fontSize="12px">
+              CAFE
+            </Tab>
+            <Tab w="70px" fontSize="12px">
+              SHOP
+            </Tab>
+            <Tab w="70px" fontSize="12px">
+              LEISURE
+            </Tab>
+            <Tab w="70px" fontSize="12px">
+              OTHER
+            </Tab>
+          </TabList>
+          <Divider />
+          <TabList h="20px" mt="5px">
+            <Tab w="70px" fontSize="12px">
+              神奈川
+            </Tab>
+            <Tab w="70px" fontSize="12px">
+              東京
+            </Tab>
+            <Tab w="70px" fontSize="12px">
+              千葉
+            </Tab>
+          </TabList>
 
-      <Tabs
-        variant="soft-rounded"
-        colorScheme="pink"
-        w="390px"
-        mt="15px"
-        align="center"
-      >
-        <TabList h="20px" mb="5px">
-          <Tab w="70px" fontSize="12px">
-            ALL
-          </Tab>
-          <Tab w="70px" fontSize="12px">
-            CAFE
-          </Tab>
-          <Tab w="70px" fontSize="12px">
-            SHOP
-          </Tab>
-          <Tab w="70px" fontSize="12px">
-            LEISURE
-          </Tab>
-          <Tab w="70px" fontSize="12px">
-            OTHER
-          </Tab>
-        </TabList>
-        <Divider />
-        <TabList h="20px" mt="5px">
-          <Tab w="70px" fontSize="12px">
-            神奈川
-          </Tab>
-          <Tab w="70px" fontSize="12px">
-            東京
-          </Tab>
-          <Tab w="70px" fontSize="12px">
-            千葉
-          </Tab>
-        </TabList>
+          <TabPanels>
+            <TabPanel>
+              <MapAll />
+            </TabPanel>
 
-        <TabPanels>
-          <TabPanel>
-            <MapAll />
-          </TabPanel>
+            <TabPanel>
+              <MapCafe />
+            </TabPanel>
 
-          <TabPanel>
-            <MapCafe />
-          </TabPanel>
+            <TabPanel>
+              <MapShop />
+            </TabPanel>
 
-          <TabPanel>
-            <MapShop />
-          </TabPanel>
+            <TabPanel>
+              <MapLeisure />
+            </TabPanel>
 
-          <TabPanel>
-            <MapLeisure />
-          </TabPanel>
+            <TabPanel>
+              <MapOther />
+            </TabPanel>
 
-          <TabPanel>
-            <MapOther />
-          </TabPanel>
+            <TabPanel>
+              <>
+                <MapKanagawa />
+              </>
+            </TabPanel>
 
-          <TabPanel>
-            <MapKanagawa />
-          </TabPanel>
+            <TabPanel>
+              <MapTokyo />
+            </TabPanel>
 
-          <TabPanel>
-            <MapTokyo />
-          </TabPanel>
-
-          <TabPanel>
-            <MapChiba />
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-
+            <TabPanel>
+              <MapChiba />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      </Box>
       <Footer />
-    </div>
+    </Box>
   );
 };
 
