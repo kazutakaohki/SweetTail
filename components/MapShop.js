@@ -29,7 +29,7 @@ import {
 
 // 👆ここまでインポート
 
-const center = { lat: 35.69575, lng: 139.77521 };
+const center = { lat: 35.62814464730432, lng: 139.77315789657152 };
 
 const markers = [
   {
@@ -169,7 +169,7 @@ const MapShop = () => {
               mapTypeControl: false,
               fullscreenControl: false,
             }}
-            onLoad={handleOnLoad}
+            // onLoad={handleOnLoad}
             onClick={() => setActiveMarker(null)}
           >
             {/* テスト追加エリア👇 */}
@@ -208,12 +208,12 @@ const MapShop = () => {
                           {name}
                         </Heading>
                         <Divider />
-                        <Stack direction="row" mt="5px" maxW="300px">
+                        <HStack mt="5px" maxW="300px">
                           <Badge colorScheme="pink">{dog}</Badge>
                           <Badge colorScheme="blue">{spotcategory}</Badge>
                           <Badge colorScheme="purple">{spotinout}</Badge>
                           <Badge colorScheme="green">{spotparking}</Badge>
-                        </Stack>
+                        </HStack>
                       </Box>
                     </InfoWindow>
                   ) : null}

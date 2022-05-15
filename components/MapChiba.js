@@ -160,7 +160,7 @@ const MapChiba = () => {
               mapTypeControl: false,
               fullscreenControl: false,
             }}
-            onLoad={handleOnLoad}
+            // onLoad={handleOnLoad}
             onClick={() => setActiveMarker(null)}
           >
             {/* テスト追加エリア👇 */}
@@ -199,12 +199,12 @@ const MapChiba = () => {
                           {name}
                         </Heading>
                         <Divider />
-                        <Stack direction="row" mt="5px" maxW="300px">
+                        <HStack mt="5px" maxW="300px">
                           <Badge colorScheme="pink">{dog}</Badge>
                           <Badge colorScheme="blue">{spotcategory}</Badge>
                           <Badge colorScheme="purple">{spotinout}</Badge>
                           <Badge colorScheme="green">{spotparking}</Badge>
-                        </Stack>
+                        </HStack>
                       </Box>
                     </InfoWindow>
                   ) : null}

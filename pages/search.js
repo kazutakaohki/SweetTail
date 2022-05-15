@@ -8,8 +8,10 @@ import MapOther from "../components/MapOther";
 import MapTokyo from "../components/MapTokyo";
 import MapKanagawa from "../components/MapKanagawa";
 import MapChiba from "../components/MapChiba";
-
 import SearchIconBox from "../components/SearchIconBox";
+
+// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+
 // Chakra UI
 import {
   Divider,

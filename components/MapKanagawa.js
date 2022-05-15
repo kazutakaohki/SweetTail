@@ -29,7 +29,7 @@ import {
 
 // 👆ここまでインポート
 
-const center = { lat: 35.466173320621934, lng: 139.62204054004542 };
+const center = { lat: 35.37514757833266, lng: 139.57747704039397 };
 
 const markers = [
   {
@@ -159,7 +159,7 @@ const MapKanagawa = () => {
               mapTypeControl: false,
               fullscreenControl: false,
             }}
-            onLoad={handleOnLoad}
+            // onLoad={handleOnLoad}
             onClick={() => setActiveMarker(null)}
           >
             {/* テスト追加エリア👇 */}
@@ -198,12 +198,12 @@ const MapKanagawa = () => {
                           {name}
                         </Heading>
                         <Divider />
-                        <Stack direction="row" mt="5px" maxW="300px">
+                        <HStack mt="5px" maxW="300px">
                           <Badge colorScheme="pink">{dog}</Badge>
                           <Badge colorScheme="blue">{spotcategory}</Badge>
                           <Badge colorScheme="purple">{spotinout}</Badge>
                           <Badge colorScheme="green">{spotparking}</Badge>
-                        </Stack>
+                        </HStack>
                       </Box>
                     </InfoWindow>
                   ) : null}

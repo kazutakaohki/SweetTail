@@ -120,7 +120,7 @@ const MapOther = () => {
           {/* Google Map Box */}
           <GoogleMap
             center={center}
-            zoom={10}
+            zoom={12}
             mapContainerStyle={{ width: "100%", height: "100%" }}
             options={{
               zoomControl: true,
@@ -128,7 +128,7 @@ const MapOther = () => {
               mapTypeControl: false,
               fullscreenControl: false,
             }}
-            onLoad={handleOnLoad}
+            // onLoad={handleOnLoad}
             onClick={() => setActiveMarker(null)}
           >
             {/* テスト追加エリア👇 */}
@@ -167,12 +167,12 @@ const MapOther = () => {
                           {name}
                         </Heading>
                         <Divider />
-                        <Stack direction="row" mt="5px" maxW="300px">
+                        <HStack mt="5px" maxW="300px">
                           <Badge colorScheme="pink">{dog}</Badge>
                           <Badge colorScheme="blue">{spotcategory}</Badge>
                           <Badge colorScheme="purple">{spotinout}</Badge>
                           <Badge colorScheme="green">{spotparking}</Badge>
-                        </Stack>
+                        </HStack>
                       </Box>
                     </InfoWindow>
                   ) : null}
