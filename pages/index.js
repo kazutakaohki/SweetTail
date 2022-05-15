@@ -16,7 +16,6 @@ import {
   ListIcon,
 } from "@chakra-ui/react";
 import SearchIconBox from "../components/SearchIconBox";
-import App from "../components/map";
 
 const Home = () => {
   return (

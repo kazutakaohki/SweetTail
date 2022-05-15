@@ -32,7 +32,7 @@ const Register = () => {
   // useStateを準備　画像を保持する、入力された文字を保持する
   const [user, setUser] = useState("");
   const [usernameValue, setUserNameValue] = useState();
-  // const [emailvalue, setEmailValue] = useState();
+  const [emailvalue, setEmailValue] = useState();
   const [dognameValue, setDognameValue] = useState();
   const [dogkindsValue, setDogkindsValue] = useState();
   const [dogageValue, setDogageValue] = useState();
@@ -93,7 +93,7 @@ const Register = () => {
             async (url) => {
               addDoc(collection(db, "users"), {
                 username: usernameValue,
-                email: user.email,
+                email: emailvalue,
                 image: url,
                 dogname: dognameValue,
                 dogkinds: dogkindsValue,
@@ -110,7 +110,7 @@ const Register = () => {
       //Firebase ver9 compliant
       addDoc(collection(db, "users"), {
         username: usernameValue,
-        email: user.email,
+        email: emailvalue,
         image: "",
         dogname: dognameValue,
         dogkinds: dogkindsValue,
@@ -221,8 +221,8 @@ const Register = () => {
                 placeholder="メールアドレス"
                 _placeholder={{ color: "gray.500" }}
                 type="email"
-                value={user.email}
-                readOnly
+                value={emailvalue}
+                // readOnly
                 onChange={(e) => setEmailValue(e.target.value)}
               />
             </FormControl>

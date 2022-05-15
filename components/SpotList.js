@@ -23,10 +23,13 @@ const SpotList = () => {
       spotname: "",
       spotaddress: "",
       spottel: "",
-      spotcategory: "",
-      spotdetail: "",
-      // spotstar: "",
       spotcomment: "",
+      spotcategory: "",
+      spotinout: "",
+      spottime: "",
+      spotparking: "",
+      dog: "",
+      link: "",
       timestamp: null,
     },
   ]);
@@ -43,10 +46,13 @@ const SpotList = () => {
           spotname: doc.data().spotname,
           spotaddress: doc.data().spotaddress,
           spottel: doc.data().spottel,
-          spotcategory: doc.data().spotcategory,
-          spotdetail: doc.data().spotdetail,
-          // spotstar: doc.data().spotstar,
           spotcomment: doc.data().spotcomment,
+          spotcategory: doc.data().spotcategory,
+          spotinout: doc.data().spotinout,
+          spottime: doc.data().spottime,
+          spotparking: doc.data().spotparking,
+          dog: doc.data().dog,
+          link: doc.data().link,
           timestamp: doc.data().timestamp,
         }))
       );
@@ -85,11 +91,13 @@ const SpotList = () => {
             spotname={item.spotname}
             spotaddress={item.spotaddress}
             spottel={item.spottel}
-            spotcategory={item.spotcategory}
-            spotdetail={item.spotdetail}
-            // spotstar={item.spotstar}
+            spottime={item.spottime}
+            spotparking={item.spotparking}
             spotcomment={item.spotcomment}
-            // timestamp={item.timestamp}
+            spotcategory={item.spotcategory}
+            spotinout={item.spotinout}
+            dog={item.dog}
+            link={item.link}
           />
         ))}
     </div>

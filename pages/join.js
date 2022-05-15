@@ -36,13 +36,13 @@ const Join = () => {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [usernameValue, setUserNameValue] = useState("");
-  // const [dognameValue, setDognameValue] = useState();
-  // const [dogkindsValue, setDogkindsValue] = useState();
-  // const [dogageValue, setDogageValue] = useState();
-  // const [doggenderValue, setDoggenderValue] = useState();
-  // const [dogweightValue, setDogweightValue] = useState();
-  // const [image, setImage] = useState(null);
+  const [usernameValue, setUserNameValue] = useState("");
+  const [dognameValue, setDognameValue] = useState();
+  const [dogkindsValue, setDogkindsValue] = useState();
+  const [dogageValue, setDogageValue] = useState();
+  const [doggenderValue, setDoggenderValue] = useState();
+  const [dogweightValue, setDogweightValue] = useState();
+  const [image, setImage] = useState(null);
 
   /* ↓関数「handleSubmit」を定義 */
   const handleSubmit = async (e) => {
@@ -55,13 +55,13 @@ const Join = () => {
         .then(() => {
           addDoc(collection(db, "users"), {
             email: email,
-            // username: usernameValue,
-            // image: url,
-            // dogname: dognameValue,
-            // dogkinds: dogkindsValue,
-            // dogage: dogageValue,
-            // doggender: doggenderValue,
-            // dogweight: dogweightValue,
+            username: usernameValue,
+            image: url,
+            dogname: dognameValue,
+            dogkinds: dogkindsValue,
+            dogage: dogageValue,
+            doggender: doggenderValue,
+            dogweight: dogweightValue,
 
             timestamp: serverTimestamp(),
           })

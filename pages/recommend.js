@@ -32,9 +32,12 @@ const Recommend = () => {
   const [spotnameValue, setSpotnameValue] = useState();
   const [spotaddressValue, setSpotaddressValue] = useState();
   const [spottelValue, setSpottelValue] = useState();
+  const [spottimeValue, setSpottimeValue] = useState();
   const [spotcategoryValue, setSpotcategoryValue] = useState();
-  const [spotdetailValue, setSpotdetailValue] = useState();
+  const [spotinoutValue, setSpotinoutValue] = useState();
+  const [dogValue, setDogValue] = useState();
   // const [spotstarvalue, setSpotStarValue] = useState();
+  const [spotparkingValue, setSpotparkingValue] = useState();
   const [spotcommentValue, setSpotcommentValue] = useState();
   const [image, setImage] = useState(null);
 
@@ -92,9 +95,12 @@ const Recommend = () => {
                 spotname: spotnameValue,
                 spotaddress: spotaddressValue,
                 spottel: spottelValue,
+                spottime: spottimeValue,
                 spotcategory: spotcategoryValue,
-                spotdetail: spotdetailValue,
+                spotinout: spotinoutValue,
+                dog: dogValue,
                 // spotstar: spotstarValue,
+                spotparking: spotparkingValue,
                 spotcomment: spotcommentValue,
                 timestamp: serverTimestamp(),
               });
@@ -109,9 +115,12 @@ const Recommend = () => {
         spotname: spotnameValue,
         spotaddress: spotaddressValue,
         spottel: spottelValue,
+        spottime: spottimeValue,
         spotcategory: spotcategoryValue,
-        spotdetail: spotdetailValue,
+        spotinout: spotinoutValue,
+        dog: dogValue,
         // spotstar: spotstarValue,
+        spotparking: spotparkingValue,
         spotcomment: spotcommentValue,
         timestamp: serverTimestamp(),
       });
@@ -121,8 +130,11 @@ const Recommend = () => {
     setSpotnameValue("");
     setSpotaddressValue("");
     setSpottelValue("");
+    setSpottimeValue("");
     setSpotcategoryValue("");
-    setSpotdetailValue("");
+    setSpotinoutValue("");
+    setDogValue("");
+    setSpotparkingValue("");
     // setSpotstarValue("");
     setSpotcommentValue("");
   };
@@ -162,64 +174,75 @@ const Recommend = () => {
           ml="20px"
           onSubmit={sendClick}
         >
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              // children={<BsFillBookmarkFill color="gray.300" />}
-            />
-            <Input
-              type="text"
-              placeholder="名　　称"
-              value={spotnameValue}
-              onChange={(e) => setSpotnameValue(e.target.value)}
-            />
-          </InputGroup>
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              // children={<FaMapMarkerAlt color="gray.50" />}
-            />
-            <Input
-              type="text"
-              placeholder="住　　所"
-              value={spotaddressValue}
-              onChange={(e) => setSpotaddressValue(e.target.value)}
-            />
-          </InputGroup>
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              // children={<BsFillTelephoneFill color="gray.300" />}
-            />
-            <Input
-              type="tel"
-              placeholder="電話番号"
-              value={spottelValue}
-              onChange={(e) => setSpottelValue(e.target.value)}
-            />
-          </InputGroup>
+          <Input
+            type="text"
+            placeholder="名　　称"
+            value={spotnameValue}
+            onChange={(e) => setSpotnameValue(e.target.value)}
+          />
+
+          <Input
+            type="text"
+            placeholder="住　　所"
+            value={spotaddressValue}
+            onChange={(e) => setSpotaddressValue(e.target.value)}
+          />
+
+          <Input
+            type="tel"
+            placeholder="電話番号"
+            value={spottelValue}
+            onChange={(e) => setSpottelValue(e.target.value)}
+          />
+
+          <Input
+            type="text"
+            placeholder="営業時間"
+            value={spottimeValue}
+            onChange={(e) => setSpottimeValue(e.target.value)}
+          />
+
           <Select
             color="gray.400"
             placeholder="カテゴリーを選択"
             value={spotcategoryValue}
             onChange={(e) => setSpotcategoryValue(e.target.value)}
           >
-            <option value="飲食店（店内可）">飲食店（店内可）</option>
-            <option value="飲食店（テラスのみ可）">
-              飲食店（テラスのみ可）
-            </option>
-            <option value="ドッグラン">ドッグラン</option>
-            <option value="レジャー施設（屋外）">レジャー施設（屋外）</option>
-            <option value="レジャー施設（屋内）">レジャー施設（屋内）</option>
-            <option value="自然">自然</option>
+            <option value="カフェ">カフェ</option>
+            <option value="ショップ">ショップ</option>
+            <option value="レジャー">レジャー</option>
             <option value="その他">その他</option>
           </Select>
 
           <Select
             color="gray.400"
+            placeholder="店内／テラス（屋内／屋外）"
+            value={spotinoutValue}
+            onChange={(e) => setSpotinoutValue(e.target.value)}
+          >
+            <option value="店内○／テラス○">店内○／テラス○</option>
+            <option value="店内×／テラス○">店内×／テラス○</option>
+            <option value="店内○／テラス×">店内○／テラス×</option>
+            <option value="屋外">屋外</option>
+            <option value="屋内">屋内</option>
+            <option value="その他">その他</option>
+          </Select>
+
+          <Select
+            color="gray.400"
+            placeholder="駐車場有無"
+            value={spotparkingValue}
+            onChange={(e) => setSpotparkingValue(e.target.value)}
+          >
+            <option value="Ｐ無し">Ｐ無し</option>
+            <option value="Ｐ有り">Ｐ有り</option>
+          </Select>
+
+          <Select
+            color="gray.400"
             placeholder="一緒に行ける犬のサイズ"
-            value={spotdetailValue}
-            onChange={(e) => setSpotdetailValue(e.target.value)}
+            value={dogValue}
+            onChange={(e) => setDogValue(e.target.value)}
           >
             <option value="小型犬">小型犬</option>
             <option value="中型犬">中型犬</option>

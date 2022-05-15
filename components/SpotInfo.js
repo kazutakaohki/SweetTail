@@ -23,6 +23,8 @@ const SpotInfo = () => {
       spottel: "",
       spotcomment: "",
       spotcategory: "",
+      spottime: "",
+      spotparking: "",
       dog: "",
       link: "",
       timestamp: null,
@@ -43,6 +45,9 @@ const SpotInfo = () => {
           spottel: doc.data().spottel,
           spotcomment: doc.data().spotcomment,
           spotcategory: doc.data().spotcategory,
+          spotinout: doc.data().spotinout,
+          spottime: doc.data().spottime,
+          spotparking: doc.data().spotparking,
           dog: doc.data().dog,
           link: doc.data().link,
           timestamp: doc.data().timestamp,
@@ -83,8 +88,11 @@ const SpotInfo = () => {
             spotname={item.spotname}
             spotaddress={item.spotaddress}
             spottel={item.spottel}
+            spottime={item.spottime}
+            spotparking={item.spotparking}
             spotcomment={item.spotcomment}
             spotcategory={item.spotcategory}
+            spotinout={item.spotinout}
             dog={item.dog}
             link={item.link}
             // timestamp={item.timestamp}

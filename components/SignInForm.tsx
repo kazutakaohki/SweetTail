@@ -17,7 +17,6 @@ const uiConfig: auth.Config = {
     // EmailAuthProvider.PROVIDER_ID,
     GoogleAuthProvider.PROVIDER_ID,
     FacebookAuthProvider.PROVIDER_ID,
-
     TwitterAuthProvider.PROVIDER_ID,
   ],
   signInSuccessUrl: "/register",

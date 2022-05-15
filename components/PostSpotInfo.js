@@ -24,8 +24,11 @@ const PostSpotInfo = ({
   spotname,
   spotaddress,
   spottel,
+  spottime,
   spotcomment,
   spotcategory,
+  spotinout,
+  spotparking,
   dog,
   link,
 }) => {
@@ -34,7 +37,7 @@ const PostSpotInfo = ({
       borderWidth="1px"
       borderRadius="lg"
       w="350px"
-      height="280px"
+      height="320px"
       //   direction={{ base: "column", md: "row" }}
       bg={useColorModeValue("white", "gray.900")}
       boxShadow={"xl"}
@@ -55,6 +58,15 @@ const PostSpotInfo = ({
       >
         {spotname}
       </Heading>
+      <Box ml="15px">
+        <Stack direction="row" mt="1px">
+          <Badge colorScheme=""></Badge>
+          <Badge colorScheme="blue">{spotcategory}</Badge>
+          <Badge colorScheme="purple">{spotinout}</Badge>
+          <Badge colorScheme="green">{spotparking}</Badge>
+          <Badge colorScheme="pink">{dog}</Badge>
+        </Stack>
+      </Box>
       <Divider />
 
       <HStack>
@@ -85,17 +97,15 @@ const PostSpotInfo = ({
                 {spottel}
               </Text>
 
+              <Badge>営業時間</Badge>
+              <Text mt="1px" fontSize="12px">
+                {spottime}
+              </Text>
+
               <Badge>おすすめポイント</Badge>
               <Text mt="1px" fontSize="12px">
                 {spotcomment}
               </Text>
-
-              <Stack direction="row" mt="1px">
-                <Badge colorScheme="blue">{spotcategory}</Badge>
-                <Badge colorScheme="green">{dog}</Badge>
-                {/* <Badge colorScheme="red">店内可</Badge>
-                <Badge colorScheme="purple">テラス可</Badge> */}
-              </Stack>
 
               {/* <Link mt="1px" fontSize="12px" href={link}>
                 GoogleBusinessPlofileを見る
