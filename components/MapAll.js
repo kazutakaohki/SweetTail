@@ -29,7 +29,7 @@ import {
 
 // 👆ここまでインポート
 
-const center = { lat: 35.66950610122131, lng: 139.70298616931188 };
+const center = { lat: 35.62814464730432, lng: 139.77315789657152 };
 
 const markers = [
   {
@@ -278,8 +278,8 @@ const MapAll = () => {
               mapTypeControl: false,
               fullscreenControl: false,
             }}
-            onLoad={handleOnLoad}
-            onClick={() => setActiveMarker(null)}
+            // onLoad={handleOnLoad}
+            // onClick={() => setActiveMarker(null)}
           >
             {/* テスト追加エリア👇 */}
 

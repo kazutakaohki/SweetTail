@@ -129,7 +129,7 @@ const MapOther = () => {
               fullscreenControl: false,
             }}
             // onLoad={handleOnLoad}
-            onClick={() => setActiveMarker(null)}
+            // onClick={() => setActiveMarker(null)}
           >
             {/* テスト追加エリア👇 */}
 
