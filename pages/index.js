@@ -14,6 +14,7 @@ import {
   List,
   ListItem,
   ListIcon,
+  Box,
 } from "@chakra-ui/react";
 import SearchIconBox from "../components/SearchIconBox";
 

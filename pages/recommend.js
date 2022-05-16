@@ -18,6 +18,7 @@ import {
   Textarea,
   Button,
   Text,
+  Box,
 } from "@chakra-ui/react";
 // Firebase
 import { storage, db } from "../firebase/firebase_init";
@@ -157,6 +158,9 @@ const Recommend = () => {
           type="file"
           onChange={onChangeImageHandler}
         ></Input>
+        <Box>
+          <img></img>
+        </Box>
 
         <TitleBar title="　2.住所・連絡先を登録する" />
 
@@ -305,7 +309,7 @@ const Recommend = () => {
               color="white"
               fontSize="12px"
               variant="solid"
-              type="submit"
+              // type="submit"
               disabled={!spotnameValue}
               onClick={() => router.push("/thanks")}
             >

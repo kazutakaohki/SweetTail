@@ -8,7 +8,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
 import MyImage from "./MyImage";
 
@@ -60,12 +60,26 @@ const Footer = () => {
         justify={"center"}
         align={"center"}
       >
-        <MyImage fname="st_logo_white.png" />
-        <Stack direction={"row"} spacing={6} color="white">
-          <Link href={"#"}>Home</Link>
-          <Link href={"#"}>About</Link>
-          <Link href={"#"}>Blog</Link>
-          <Link href={"#"}>Contact</Link>
+        <Link href=".">
+          <MyImage fname="st_logo_white.png" wide={150} />
+        </Link>
+
+        <Stack direction={"row"} spacing={6} color={"white"}>
+          <SocialButton label={"Twitter"} href={"#"}>
+            <FaTwitter />
+          </SocialButton>
+          <SocialButton
+            label={"Facebook"}
+            href={"https://www.facebook.com/profile.php?id=100080875051145"}
+          >
+            <FaFacebook />
+          </SocialButton>
+          <SocialButton
+            label={"Instagram"}
+            href={"https://www.instagram.com/sweettail_dog/"}
+          >
+            <FaInstagram />
+          </SocialButton>
         </Stack>
       </Container>
 
@@ -79,16 +93,11 @@ const Footer = () => {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Stack direction={"row"} spacing={6} color={"white"}>
-            <SocialButton label={"Twitter"} href={"#"}>
-              <FaTwitter />
-            </SocialButton>
-            <SocialButton label={"YouTube"} href={"#"}>
-              <FaYoutube />
-            </SocialButton>
-            <SocialButton label={"Instagram"} href={"#"}>
-              <FaInstagram />
-            </SocialButton>
+          <Stack direction={"row"} spacing={6} color="white">
+            <Link href={"#"}>Home</Link>
+            <Link href={"#"}>About</Link>
+            <Link href={"#"}>Blog</Link>
+            <Link href={"#"}>Contact</Link>
           </Stack>
 
           <Text color="white">© 2022 SweetTail All rights reserved</Text>

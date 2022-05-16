@@ -27,6 +27,8 @@ import {
   Divider,
 } from "@chakra-ui/react";
 
+import MyImage from "./MyImage";
+
 // 👆ここまでインポート
 
 const center = { lat: 35.62814464730432, lng: 139.77315789657152 };
@@ -41,6 +43,8 @@ const markers = [
     dog: "大型犬",
     position: { lat: 35.6514906, lng: 139.7206433 },
     gbp: "https://www.google.co.jp/maps/place/%E3%83%9C%E3%83%B3%E3%83%80%E3%82%A4+%E3%82%AB%E3%83%95%E3%82%A7/@35.6514906,139.7206433,17z/data=!3m2!4b1!5s0x60188b72be163791:0x17b064c60e14aea4!4m5!3m4!1s0x60188b72bf91fe2b:0x332a10b2f06891d9!8m2!3d35.6514863!4d139.7228373?hl=ja",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/sweettail-next.appspot.com/o/images%2FBONDI%20CAFE.png?alt=media&token=0d2aaa6b-f313-4b56-b4f3-fc5b53ae7408",
   },
   {
     id: 2,
@@ -286,6 +290,7 @@ const MapAll = () => {
             {markers.map(
               ({
                 id,
+                image,
                 name,
                 spotcategory,
                 spotinout,
@@ -301,29 +306,31 @@ const MapAll = () => {
                 >
                   {activeMarker === id ? (
                     <InfoWindow onCloseClick={() => setActiveMarker(null)}>
-                      <Box>
-                        <Heading
-                          as="a"
-                          href={gbp}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          mt="5px"
-                          ml="5px"
-                          mb="5px"
-                          fontSize="12px"
-                          // fontWeight="bold"
-                          textAlign="left"
-                        >
-                          {name}
-                        </Heading>
-                        <Divider />
-                        <HStack mt="5px" maxW="300px">
-                          <Badge colorScheme="pink">{dog}</Badge>
-                          <Badge colorScheme="blue">{spotcategory}</Badge>
-                          <Badge colorScheme="purple">{spotinout}</Badge>
-                          <Badge colorScheme="green">{spotparking}</Badge>
-                        </HStack>
-                      </Box>
+                      <HStack>
+                        <Box>
+                          <Heading
+                            as="a"
+                            href={gbp}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            mt="5px"
+                            ml="5px"
+                            mb="5px"
+                            fontSize="12px"
+                            // fontWeight="bold"
+                            textAlign="left"
+                          >
+                            {name}
+                          </Heading>
+                          <Divider />
+                          <HStack mt="5px">
+                            <Badge colorScheme="pink">{dog}</Badge>
+                            <Badge colorScheme="blue">{spotcategory}</Badge>
+                            <Badge colorScheme="purple">{spotinout}</Badge>
+                            <Badge colorScheme="green">{spotparking}</Badge>
+                          </HStack>
+                        </Box>
+                      </HStack>
                     </InfoWindow>
                   ) : null}
                 </Marker>

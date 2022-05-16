@@ -42,7 +42,7 @@ const PostSpotInfo = ({
       bg={useColorModeValue("white", "gray.900")}
       boxShadow={"xl"}
       mt="10px"
-      ml="20px"
+      // ml="20px"
     >
       <Heading
         // color="#EF9996"
@@ -84,7 +84,7 @@ const PostSpotInfo = ({
           )}
         </Box>
 
-        <Box w="230px">
+        <Box w="230px" textAlign="left">
           <Stack mt="5px" ml="10px" direction="row">
             <Stack>
               <Badge>住所</Badge>

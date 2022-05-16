@@ -17,6 +17,7 @@ import {
   MenuList,
   MenuItem,
   MenuDivider,
+  Link,
 } from "@chakra-ui/react";
 
 // Firebase
@@ -75,18 +76,18 @@ const Header = () => {
               <MenuItem as="a" href="./join">
                 新規会員登録
               </MenuItem>
-              <MenuDivider />
+              {/* <MenuDivider />
               <MenuItem as="a" href="./login">
                 ログイン
               </MenuItem>
               <MenuItem as="a" href="./mypage">
                 マイページ
-              </MenuItem>
+              </MenuItem> */}
             </MenuList>
           </Menu>
-
-          <MyImage fname="st_logo_white.png" />
-
+          <Link href="/">
+            <MyImage fname="st_logo_white.png" wide={150} />
+          </Link>
           <Menu>
             <MenuButton
               as={Button}
